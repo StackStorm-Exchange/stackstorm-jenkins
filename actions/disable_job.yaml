@@ -1,6 +1,6 @@
 ---
 name: "disable_job"
-runner_type: "run-python"
+runner_type: "python-script"
 description: "Disable Jenkins Job."
 enabled: true
 entry_point: "disable_job.py"

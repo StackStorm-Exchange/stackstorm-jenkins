@@ -1,6 +1,6 @@
 ---
 name: "install_plugin"
-runner_type: "run-python"
+runner_type: "python-script"
 description: "Install Jenkins plugin."
 enabled: true
 entry_point: "install_plugin.py"
