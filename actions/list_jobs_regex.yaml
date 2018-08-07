@@ -1,0 +1,11 @@
+---
+name: "list_jobs_regex"
+runner_type: "python-script"
+description: "Get a list of jobs information that contain names which match the regex pattern."
+enabled: true
+entry_point: "list_jobs_regex.py"
+parameters:
+  pattern:
+    type: "string"
+    description: "regex pattern"
+    required: true
