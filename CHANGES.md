@@ -1,5 +1,9 @@
 # Change Log
 
+# 0.5.0
+
+- Add rebuild last Jenkins job. Add list Jenkins jobs by regex
+
 # 0.4.0
 
 - Updated action `runner_type` from `run-python` to `python-script`

@@ -1,0 +1,11 @@
+---
+name: "rebuild_last_job"
+runner_type: "python-script"
+description: "rebuild last job"
+enabled: true
+entry_point: "rebuild_last_job.py"
+parameters:
+  project:
+    type: "string"
+    description: "Name of the Jenkins job"
+    required: true

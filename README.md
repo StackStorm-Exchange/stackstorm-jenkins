@@ -34,3 +34,5 @@ You can also use dynamic values from the datastore. See the
 * `disable_job` - Disable Jenkins job
 * `get_job_info` - Retrieve Jenkins job information
 * `install_plugin` - Install plugin
+* `rebuild_last_job` - Rebuild last Jenkins job
+* `list_jobs_regex` - List Jenkins job name by regex pattern
