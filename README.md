@@ -25,6 +25,13 @@ You can also use dynamic values from the datastore. See the
 **Note** : When modifying the configuration in `/opt/stackstorm/configs/` please
            remember to tell StackStorm to load these new values by running
            `st2ctl reload --register-configs`
+          
+**Note** : If your jenkins endpoint has an auto-signed certified and you got
+           `certificate verify failed` Error, set the `PYTHONHTTPSVERIFY=0`
+           varialbe on `/etc/sysconfig/st2api` and `/etc/sysconfig/st2actionrunner`,
+           after modify, reload st2api and st2actionrunner services with commands
+           `st2ctl restart-component st2api` and `st2ctl restart-component st2actionrunner`
+           to apply changes
 
 ## Actions
 
