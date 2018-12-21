@@ -4,6 +4,9 @@ import jenkins
 
 class JenkinsBaseAction(Action):
 
+    def run(self, **kwargs):
+        pass
+
     def __init__(self, config):
         super(JenkinsBaseAction, self).__init__(config)
         self.jenkins = self._get_client()
