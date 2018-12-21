@@ -36,10 +36,14 @@ You can also use dynamic values from the datastore. See the
 ## Actions
 
 * `build_job` - Kick off CI build based on project name
+* `build_job_enh` - Kick off CI build based on project name and wait for it to be executed, return build info
 * `list_running_jobs` - List all currently running jobs
 * `enable_job` - Enable Jenkins job
 * `disable_job` - Disable Jenkins job
 * `get_job_info` - Retrieve Jenkins job information
+* `get_build_info` - Retrieve Jenkins build information
 * `install_plugin` - Install plugin
 * `rebuild_last_job` - Rebuild last Jenkins job
 * `list_jobs_regex` - List Jenkins job name by regex pattern
+* `stop_build` - Stop a running Jenkins build
+

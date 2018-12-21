@@ -1,0 +1,14 @@
+name: stop_build
+runner_type: python-script
+description: "Stop a running Jenkins build"
+enabled: true
+entry_point: "stop_build.py"
+parameters:
+    project:
+        type: "string"
+        description: "Name of Jenkins job"
+        required: true
+    number:
+        type: "integer"
+        description: "Jenkins build number for the job"
+        required: true
