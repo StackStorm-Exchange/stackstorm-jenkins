@@ -1,0 +1,6 @@
+---
+name: list_jobs
+runner_type: python-script
+description: "List Jenkins jobs"
+enabled: true
+entry_point: "list_jobs.py"

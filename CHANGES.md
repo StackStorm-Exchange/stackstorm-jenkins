@@ -1,5 +1,10 @@
 # Change Log
 
+# 0.7.0
+
+- Add `get_runnings_builds` action to get all currently running builds.
+- Rename `list_running_jobs` -> `list_jobs` to reflect its meaning properly, the old name was misleading.
+
 # 0.6.0
 
 - Add `build_job_enh` (which waits to get build info), `stop_build` and `get_build_info` actions.
