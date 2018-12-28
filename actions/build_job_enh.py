@@ -4,16 +4,17 @@ from jenkins import NotFoundException
 
 
 class BuildProject(action.JenkinsBaseAction):
-    def run(self, project, parameters=None):
+    def run(self, project, max_wait=30, parameters=None):
         try:
             queue_id = self.jenkins.build_job(project, parameters)
         except NotFoundException:
             return False, {'error': 'Project {0} not found.'.format(project)}
         attempt = 0
         sleep_interval = 3
+        max_attempts = int(max_wait / sleep_interval)
         run_build_result = False
         queue_item = None
-        while attempt < 10 and not run_build_result:
+        while attempt <= max_attempts and not run_build_result:
             queue_item = self.jenkins.get_queue_item(queue_id)
             if 'executable' in queue_item:
                 run_build_result = True
