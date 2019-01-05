@@ -11,3 +11,7 @@ parameters:
     parameters:
         type: "object"
         description: "Optional parameters for build in JSON format"
+    max_wait:
+        type: "integer"
+        description: "Seconds to wait for executor, default 30s"
+        default: 30

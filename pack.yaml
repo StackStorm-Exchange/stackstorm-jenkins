@@ -2,7 +2,11 @@
 ref: jenkins
 name: jenkins
 description: Jenkins CI Integration Pack
-version: 0.6.0
+keywords:
+  - jenkins
+  - continuous deployment
+  - CICD
+version: 0.7.0
 author: James Fryman
 email: james@stackstorm.com
 contributors:
