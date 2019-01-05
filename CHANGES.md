@@ -2,7 +2,7 @@
 
 # 0.7.0
 
-- Added `get_runnings_builds` action to get all currently running builds.
+- Added `get_running_builds` action to get all currently running builds.
 - Renamed `list_running_jobs` -> `list_jobs` to reflect its meaning properly, the old name was misleading.
 - Updated `build_job_enh` to support `max_wait` parameter (wait for about this many seconds to get the job executed).
 
