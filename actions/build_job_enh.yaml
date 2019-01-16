@@ -15,3 +15,7 @@ parameters:
         type: "integer"
         description: "Seconds to wait for executor, default 30s"
         default: 30
+  config_override:
+    type: "object"
+    required: false
+    description: "Override pack configuration by providing an object with url, username and password keys and appropriate values"

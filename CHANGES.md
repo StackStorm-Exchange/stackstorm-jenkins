@@ -1,5 +1,9 @@
 # Change Log
 
+# 0.7.2
+
+- All actions got `config_override` optional parameter to support multi-tenancy. The paramater takes an object with `url`, `username` and `password` keys with appropriate values to contact arbitrary Jenkins instance instead of the one configured in the global pack configuration.
+
 # 0.7.1
 
 - Added `get_job_params` action to get all params of a certain job and their default values, and optionally merge it with user provided params.

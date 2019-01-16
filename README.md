@@ -12,6 +12,10 @@ for this pack to be able to start jobs.
 
 ## Configuration
 
+# Modern way
+Once the pack is installed, issue `st2 pack config jenkins` command to enter url, username and password (if auth is enabled) of your primary Jenkins instance.
+
+# Legacy way
 Copy the example configuration in [jenkins.yaml.example](./jenkins.yaml.example)
 to `/opt/stackstorm/configs/jenkins.yaml` and edit as required.
 
@@ -21,6 +25,8 @@ to `/opt/stackstorm/configs/jenkins.yaml` and edit as required.
 
 You can also use dynamic values from the datastore. See the
 [docs](https://docs.stackstorm.com/reference/pack_configs.html) for more info.
+
+**Note** : Configuration can be overridden per each action execution. See below. 
 
 **Note** : When modifying the configuration in `/opt/stackstorm/configs/` please
            remember to tell StackStorm to load these new values by running
@@ -34,6 +40,8 @@ You can also use dynamic values from the datastore. See the
            to apply the changes.
 
 ## Actions
+
+**Note** : As of v0.7.2 each action supports optional `config_override` parameter to override `url`, `username` and `password` configuration values. Pass it as an object, e.g. `{"url": "http://someotherjenkinshost.example.com:8080", "username": "user1", "password": "somepassword"}` or `{"url": "http://someotherjenkinshost.example.com:8080"}` if auth is not required. 
 
 * `build_job` - Kick off CI build based on project name
 * `build_job_enh` - Kick off CI build based on project name and wait for it to be executed, return build info

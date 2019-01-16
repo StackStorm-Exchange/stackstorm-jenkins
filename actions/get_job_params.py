@@ -2,8 +2,9 @@ from lib import action
 
 
 class GetJobParams(action.JenkinsBaseAction):
-    def run(self, project, params):
-
+    def run(self, project, params, config_override=None):
+        if config_override is not None:
+            self.config_override(config_override)
         job_info = self.jenkins.get_job_info(project, depth=0, fetch_all_builds='False')
         try:
             job_actions = job_info['actions']

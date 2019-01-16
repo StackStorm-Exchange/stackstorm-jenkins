@@ -9,3 +9,7 @@ parameters:
     type: "string"
     description: "Name of the Jenkins job"
     required: true
+  config_override:
+    type: "object"
+    required: false
+    description: "Override pack configuration by providing an object with url, username and password keys and appropriate values"

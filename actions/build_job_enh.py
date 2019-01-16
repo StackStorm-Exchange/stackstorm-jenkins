@@ -4,7 +4,9 @@ from jenkins import NotFoundException
 
 
 class BuildProject(action.JenkinsBaseAction):
-    def run(self, project, max_wait=30, parameters=None):
+    def run(self, project, max_wait=30, parameters=None, config_override=None):
+        if config_override is not None:
+            self.config_override(config_override)
         try:
             queue_id = self.jenkins.build_job(project, parameters)
         except NotFoundException:

@@ -4,7 +4,9 @@ import re
 
 
 class GetRunningBuilds(action.JenkinsBaseAction):
-    def run(self, name_pattern):
+    def run(self, name_pattern, config_override=None):
+        if config_override is not None:
+            self.config_override(config_override)
         try:
             running_builds = self.jenkins.get_running_builds()
         except JenkinsException as e:
