@@ -1,5 +1,9 @@
 # Change Log
 
+# 0.7.1
+
+- Added `get_job_params` action to get all params of a certain job and their default values, and optionally merge it with user provided params.
+
 # 0.7.0
 
 - Added `get_running_builds` action to get all currently running builds.

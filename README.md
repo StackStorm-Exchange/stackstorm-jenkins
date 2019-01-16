@@ -41,6 +41,7 @@ You can also use dynamic values from the datastore. See the
 * `enable_job` - Enable Jenkins job
 * `disable_job` - Disable Jenkins job
 * `get_job_info` - Retrieve Jenkins job information
+* `get_job_params` - Retrieve Jenkins job params with default values and merge with the provided dict of params, if any 
 * `get_build_info` - Retrieve Jenkins build information
 * `get_running_builds` - Retrieve all running Jenkins builds (possible to filter with regex by name)
 * `install_plugin` - Install plugin

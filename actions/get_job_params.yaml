@@ -1,0 +1,16 @@
+---
+name: "get_job_params"
+runner_type: "python-script"
+description: "Retrieve job's params"
+enabled: true
+entry_point: "get_job_params.py"
+parameters:
+  project:
+    type: "string"
+    description: "Name of the Jenkins job"
+    required: true
+  params:
+    type: "object"
+    description: "Params to merge with default values"
+    required: false
+    default: {}
