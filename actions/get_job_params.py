@@ -21,7 +21,8 @@ class GetJobParams(action.JenkinsBaseAction):
                 for p_def in i['parameterDefinitions']:
                     try:
                         job_params[p_def['name']] = p_def['defaultParameterValue']['value']
-                        self.logger.debug("Adding param %s with value %s", p_def['name'], p_def['defaultParameterValue']['value'])
+                        self.logger.debug("Adding param %s with value %s", p_def['name'],
+                                          p_def['defaultParameterValue']['value'])
                     except KeyError as e:
                         self.logger.debug("Exception %s when reading param %s", e, p_def['name'])
                         continue
