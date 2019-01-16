@@ -4,17 +4,17 @@ description: "Kick off Jenkins Build Jobs (return enhanced info)"
 enabled: true
 entry_point: "build_job_enh.py"
 parameters:
-    project:
-        type: "string"
-        description: "Project to build in Jenkins"
-        required: true
-    parameters:
-        type: "object"
-        description: "Optional parameters for build in JSON format"
-    max_wait:
-        type: "integer"
-        description: "Seconds to wait for executor, default 30s"
-        default: 30
+  project:
+    type: "string"
+    description: "Project to build in Jenkins"
+    required: true
+  parameters:
+    type: "object"
+    description: "Optional parameters for build in JSON format"
+  max_wait:
+    type: "integer"
+    description: "Seconds to wait for executor, default 30s"
+    default: 30
   config_override:
     type: "object"
     required: false

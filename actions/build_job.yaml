@@ -4,13 +4,13 @@ description: "Kick off Jenkins Build Jobs"
 enabled: true
 entry_point: "build_job.py"
 parameters:
-    project:
-        type: string
-        description: "Project to build in Jenkins"
-        required: true
-    parameters:
-        type: object
-        description: "Optional parameters for build in JSON format"
+  project:
+    type: string
+    description: "Project to build in Jenkins"
+    required: true
+  parameters:
+    type: object
+    description: "Optional parameters for build in JSON format"
   config_override:
     type: "object"
     required: false
