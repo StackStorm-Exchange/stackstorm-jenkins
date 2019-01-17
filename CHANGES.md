@@ -1,5 +1,10 @@
 # Change Log
 
+# 0.7.3
+
+Security release.
+- `config_override` optional parameter is marked as secret so whatever is provided there is not exposed in the UI.
+
 # 0.7.2
 
 - All actions got `config_override` optional parameter to support multi-tenancy. The paramater takes an object with `url`, `username` and `password` keys with appropriate values to contact arbitrary Jenkins instance instead of the one configured in the global pack configuration.

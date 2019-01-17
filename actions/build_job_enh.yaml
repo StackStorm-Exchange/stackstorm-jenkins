@@ -18,4 +18,5 @@ parameters:
   config_override:
     type: "object"
     required: false
+    secret: true
     description: "Override pack configuration by providing an object with url, username and password keys and appropriate values"
