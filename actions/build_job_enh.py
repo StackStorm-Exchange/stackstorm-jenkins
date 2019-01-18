@@ -1,6 +1,6 @@
 from lib import action
 from time import sleep
-from jenkins import NotFoundException
+from jenkins import NotFoundException, JenkinsException
 
 
 class BuildProject(action.JenkinsBaseAction):
@@ -11,6 +11,8 @@ class BuildProject(action.JenkinsBaseAction):
             queue_id = self.jenkins.build_job(project, parameters)
         except NotFoundException:
             return False, {'error': 'Project {0} not found.'.format(project)}
+        except JenkinsException as e:
+            return False, {'error': 'General error: {0}'.format(e)}
         attempt = 0
         sleep_interval = 3
         max_attempts = int(max_wait / sleep_interval)
