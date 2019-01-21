@@ -1,0 +1,16 @@
+---
+name: get_queue_info
+runner_type: python-script
+description: "Get Queue Info"
+enabled: true
+entry_point: "get_queue_info.py"
+parameters:
+  name_pattern:
+    type: "string"
+    description: "regex pattern to filter by name"
+    required: false
+  config_override:
+    type: "object"
+    required: false
+    secret: true
+    description: "Override pack configuration by providing an object with url, username and password keys and appropriate values"

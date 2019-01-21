@@ -1,5 +1,10 @@
 # Change Log
 
+# 0.7.5
+
+- Added `get_queue_info` action.
+- Added `cancel_queued_build` action.
+
 # 0.7.4
 
 - `get_running_builds` now decodes/unquotes jobs' names and adds them as `name_decoded` into the resulting array.

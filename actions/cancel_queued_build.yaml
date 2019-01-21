@@ -1,0 +1,15 @@
+name: cancel_queued_build
+runner_type: python-script
+description: "Cancel a queued build"
+enabled: true
+entry_point: "cancel_queued_build.py"
+parameters:
+  job_id:
+    type: "integer"
+    description: "Jenkins job id for the queued build."
+    required: true
+  config_override:
+    type: "object"
+    required: false
+    secret: true
+    description: "Override pack configuration by providing an object with url, username and password keys and appropriate values"

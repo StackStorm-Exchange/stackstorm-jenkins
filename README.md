@@ -52,8 +52,10 @@ You can also use dynamic values from the datastore. See the
 * `get_job_params` - Retrieve Jenkins job params with default values and merge with the provided dict of params, if any 
 * `get_build_info` - Retrieve Jenkins build information
 * `get_running_builds` - Retrieve all running Jenkins builds (possible to filter with regex by name)
+* `get_queue_info` - Retrieve queue information from the Jenkins instance
 * `install_plugin` - Install plugin
 * `rebuild_last_job` - Rebuild last Jenkins job
 * `list_jobs_regex` - List Jenkins job name by regex pattern
 * `stop_build` - Stop a running Jenkins build
+* `cancel_queued_build` - Cancel a queued build
 
