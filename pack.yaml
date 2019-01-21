@@ -6,7 +6,7 @@ keywords:
   - jenkins
   - continuous deployment
   - CICD
-version: 0.7.3
+version: 0.7.4
 author: James Fryman
 email: james@stackstorm.com
 contributors:

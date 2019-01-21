@@ -1,6 +1,7 @@
 from lib import action
 from jenkins import JenkinsException
 import re
+import urllib
 
 
 class GetRunningBuilds(action.JenkinsBaseAction):
@@ -12,10 +13,14 @@ class GetRunningBuilds(action.JenkinsBaseAction):
         except JenkinsException as e:
             return False, {'error': str(e)}
 
+        for build in running_builds:
+            # Jenkins returns url-encoded names
+            build['name_decoded'] = urllib.unquote(build['name'])
+
         if name_pattern is not None:
             filtered_running_builds = []
             for build in running_builds:
-                if re.match(name_pattern, build['name']):
+                if re.match(name_pattern, build['name_decoded']):
                     filtered_running_builds.append(build)
 
             return True, filtered_running_builds
