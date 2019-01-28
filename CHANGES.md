@@ -1,5 +1,9 @@
 # Change Log
 
+# 0.7.6
+
+- If `build_job_enh` fails and `queue_id` is known, include it in the result to let users follow up later.
+
 # 0.7.5
 
 - Added `get_queue_info` action.
