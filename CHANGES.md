@@ -20,7 +20,7 @@ Security release.
 
 # 0.7.2
 
-- All actions got `config_override` optional parameter to support multi-tenancy. The paramater takes an object with `url`, `username` and `password` keys with appropriate values to contact arbitrary Jenkins instance instead of the one configured in the global pack configuration.
+- All actions got `config_override` optional parameter to support multi-tenancy. The parameter takes an object with `url`, `username` and `password` keys with appropriate values to contact arbitrary Jenkins instance instead of the one configured in the global pack configuration.
 
 # 0.7.1
 
