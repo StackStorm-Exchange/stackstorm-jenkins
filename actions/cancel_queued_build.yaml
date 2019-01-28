@@ -1,13 +1,12 @@
----
-name: "enable_job"
-runner_type: "python-script"
-description: "Enable Jenkins Job."
+name: cancel_queued_build
+runner_type: python-script
+description: "Cancel a queued build"
 enabled: true
-entry_point: "enable_job.py"
+entry_point: "cancel_queued_build.py"
 parameters:
-  name:
-    type: "string"
-    description: "Name of the job to enable."
+  job_id:
+    type: "integer"
+    description: "Jenkins job id for the queued build."
     required: true
   config_override:
     type: "object"

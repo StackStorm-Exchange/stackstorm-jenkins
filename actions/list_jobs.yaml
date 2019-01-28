@@ -4,3 +4,9 @@ runner_type: python-script
 description: "List Jenkins jobs"
 enabled: true
 entry_point: "list_jobs.py"
+parameters:
+  config_override:
+    type: "object"
+    required: false
+    secret: true
+    description: "Override pack configuration by providing an object with url, username and password keys and appropriate values"

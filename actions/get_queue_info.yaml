@@ -1,14 +1,14 @@
 ---
-name: "enable_job"
-runner_type: "python-script"
-description: "Enable Jenkins Job."
+name: get_queue_info
+runner_type: python-script
+description: "Get Queue Info"
 enabled: true
-entry_point: "enable_job.py"
+entry_point: "get_queue_info.py"
 parameters:
-  name:
+  name_pattern:
     type: "string"
-    description: "Name of the job to enable."
-    required: true
+    description: "regex pattern to filter by name"
+    required: false
   config_override:
     type: "object"
     required: false

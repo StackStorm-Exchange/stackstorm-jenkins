@@ -4,11 +4,16 @@ description: "Stop a running Jenkins build"
 enabled: true
 entry_point: "stop_build.py"
 parameters:
-    project:
-        type: "string"
-        description: "Name of Jenkins job"
-        required: true
-    number:
-        type: "integer"
-        description: "Jenkins build number for the job"
-        required: true
+  project:
+    type: "string"
+    description: "Name of Jenkins job"
+    required: true
+  number:
+    type: "integer"
+    description: "Jenkins build number for the job"
+    required: true
+  config_override:
+    type: "object"
+    required: false
+    secret: true
+    description: "Override pack configuration by providing an object with url, username and password keys and appropriate values"
