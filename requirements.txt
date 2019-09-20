@@ -1,1 +1,2 @@
-python-jenkins>=0.4.2
+requests
+python-jenkins>=1.4.0
