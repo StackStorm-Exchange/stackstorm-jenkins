@@ -58,4 +58,6 @@ You can also use dynamic values from the datastore. See the
 * `list_jobs_regex` - List Jenkins job name by regex pattern
 * `stop_build` - Stop a running Jenkins build
 * `cancel_queued_build` - Cancel a queued build
+* `set_build_logkeep` - Set build's LogKeep flag to true or false
+
 

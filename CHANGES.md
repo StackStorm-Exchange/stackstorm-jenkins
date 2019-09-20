@@ -1,5 +1,10 @@
 # Change Log
 
+# 0.7.7
+
+- Bumping requirements to python-jenkins>=1.4.0.
+- Added `set_build_logkeep` action to set build's keep forever flag.
+
 # 0.7.6
 
 - If `build_job_enh` fails and `queue_id` is known, include it in the result to let users follow up later.
