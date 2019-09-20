@@ -9,7 +9,6 @@ class JenkinsBaseAction(Action):
 
     def __init__(self, config):
         super(JenkinsBaseAction, self).__init__(config)
-        self.config = config
         self.jenkins = self._get_client()
 
     def config_override(self, new_config):
