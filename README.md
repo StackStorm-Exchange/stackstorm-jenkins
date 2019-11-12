@@ -44,7 +44,7 @@ You can also use dynamic values from the datastore. See the
 **Note** : As of v0.7.2 each action supports optional `config_override` parameter to override `url`, `username` and `password` configuration values. Pass it as an object, e.g. `{"url": "http://someotherjenkinshost.example.com:8080", "username": "user1", "password": "somepassword"}` or `{"url": "http://someotherjenkinshost.example.com:8080"}` if auth is not required. 
 
 * `build_job` - Kick off CI build based on project name
-* `build_job_enh` - Kick off CI build based on project name and wait for it to be executed, return build info
+* `build_job_enh` - Kick off CI build based on project name and wait for it to be executed (and optionally to complete), return build info
 * `list_jobs` - List all jobs
 * `enable_job` - Enable Jenkins job
 * `disable_job` - Disable Jenkins job

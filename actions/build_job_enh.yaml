@@ -20,3 +20,8 @@ parameters:
     required: false
     secret: true
     description: "Override pack configuration by providing an object with url, username and password keys and appropriate values"
+  wait_for_results:
+    type: "boolean"
+    required: false
+    default: false
+    description: "Wait for the project job to complete. Make sure you override timeout if you expect the job to run longer than the default value of 600 seconds."
