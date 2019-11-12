@@ -4,7 +4,8 @@ from jenkins import NotFoundException, JenkinsException
 
 
 class BuildProject(action.JenkinsBaseAction):
-    def run(self, project, max_wait=30, parameters=None, config_override=None):
+    def run(self, project, max_wait=30, wait_for_results=False, parameters=None,
+            config_override=None):
         if config_override is not None:
             self.config_override(config_override)
         (status, queue_id) = self.kick_off_job(project, parameters)
@@ -30,6 +31,34 @@ class BuildProject(action.JenkinsBaseAction):
                 break
             else:
                 attempt += 1
+                self.logger.debug("Waiting for the job to get executed...")
+                sleep(sleep_interval)
+
+        job_completed = False
+        if run_build_result and wait_for_results:
+            while not job_completed:
+                try:
+                    number = queue_item['executable']['number']
+                    build_info = self.jenkins.get_build_info(project, number, depth=0)
+                    if 'building' in build_info.keys():
+                        if not build_info['building']:
+                            self.logger.debug("Build job {} number {} completed.".format(
+                                project, number
+                            ))
+                            job_completed = True
+                            queue_item['executable'].update(build_info)
+                    else:
+                        # for safety let's exit here
+                        self.logger.debug("Build info doesn't have 'building' field. "
+                                          "Can't wait for results.")
+                        break
+
+                except KeyError:
+                    # could not find out build number
+                    self.logger.debug("Could not find build number for this job, will not "
+                                      "wait for results")
+                    break
+                self.logger.debug("Waiting for the job to complete...")
                 sleep(sleep_interval)
 
         if not run_build_result and 'why' in queue_item:
@@ -58,3 +87,23 @@ class BuildProject(action.JenkinsBaseAction):
                 return 2, {'error': 'General error: {0}'.format(msg)}
         else:
             return 0, queue_id
+
+
+# local testing
+if __name__ == '__main__':
+    import os
+    import pprint
+
+    j_url = os.environ.get("JENKINS_URL")
+    j_username = os.environ.get("JENKINS_USERNAME")
+    j_password = os.environ.get("JENKINS_PASSWORD")
+
+    conf_override = {'url': j_url, 'username': j_username, 'password': j_password}
+    act = BuildProject(config=conf_override)
+    res_flag, res_dict = act.run(project='demo',
+                                 wait_for_results=True,
+                                 parameters={'PARAM1': 'VALUE1'})
+
+    pp = pprint.PrettyPrinter(indent=2)
+    pp.pprint(res_flag)
+    pp.pprint(res_dict)
