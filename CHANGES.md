@@ -1,5 +1,9 @@
 # Change Log
 
+# 0.8.0
+
+- Changed action `build_job_enh`: added optional parameter `wait_for_results`, be careful with the action's default `timeout` when turning it on.
+
 # 0.7.7
 
 - Bumping requirements to python-jenkins>=1.4.0.
