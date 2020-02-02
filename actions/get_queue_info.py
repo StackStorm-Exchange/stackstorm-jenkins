@@ -1,7 +1,9 @@
-from lib import action
-from jenkins import JenkinsException
 import re
-import urllib
+from six.moves.urllib.parse import unquote
+
+from jenkins import JenkinsException
+
+from lib import action
 
 
 class GetQueueInfo(action.JenkinsBaseAction):
@@ -16,7 +18,7 @@ class GetQueueInfo(action.JenkinsBaseAction):
         for job in queued_jobs:
             # Jenkins returns url-encoded names
             try:
-                job['task']['name_decoded'] = urllib.unquote(job['task']['name'])
+                job['task']['name_decoded'] = unquote(job['task']['name'])
             except KeyError:
                 continue
 
