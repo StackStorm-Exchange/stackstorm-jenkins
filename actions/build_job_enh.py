@@ -76,7 +76,7 @@ class BuildProject(action.JenkinsBaseAction):
             # terminal error
             return 2, {'error': 'Project {0} not found.'.format(prj)}
         except JenkinsException as e:
-            msg = e.message
+            msg = e.message  # pylint: disable=no-member
             msg = msg.encode('ascii', 'ignore')
             if 'doBuildWithParameters' in msg:
                 # most likely build is not parameterized but we sent parameters,

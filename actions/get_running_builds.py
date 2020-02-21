@@ -1,7 +1,9 @@
-from lib import action
-from jenkins import JenkinsException
 import re
-import urllib
+from six.moves.urllib.parse import unquote
+
+from jenkins import JenkinsException
+
+from lib import action
 
 
 class GetRunningBuilds(action.JenkinsBaseAction):
@@ -15,7 +17,7 @@ class GetRunningBuilds(action.JenkinsBaseAction):
 
         for build in running_builds:
             # Jenkins returns url-encoded names
-            build['name_decoded'] = urllib.unquote(build['name'])
+            build['name_decoded'] = unquote(build['name'])
 
         if name_pattern is not None:
             filtered_running_builds = []
