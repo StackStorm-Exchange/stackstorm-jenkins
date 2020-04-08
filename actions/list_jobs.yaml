@@ -5,6 +5,10 @@ description: "List Jenkins jobs"
 enabled: true
 entry_point: "list_jobs.py"
 parameters:
+  folder_depth:
+    type: "integer"
+    required: false
+    description: "Number of levels to search, int. By default 0, which will limit search to toplevel. None disables the limit."
   config_override:
     type: "object"
     required: false
