@@ -1,5 +1,10 @@
 # Change Log
 
+# 1.0.1
+
+- Allow folder depth to be provided by users for list jobs actions
+- Better exceptions handling in `build_job_enh`
+
 ## 1.0.0
 
 * Drop Python 2.7 support
