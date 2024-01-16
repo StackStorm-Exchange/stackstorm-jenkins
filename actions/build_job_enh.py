@@ -53,10 +53,11 @@ class BuildProject(action.JenkinsBaseAction):
                                           "Can't wait for results.")
                         break
 
-                except KeyError:
+                except (KeyError, TypeError) as exc:
                     # could not find out build number
                     self.logger.debug("Could not find build number for this job, will not "
-                                      "wait for results")
+                                      "wait for results: {}".format(exc))
+                    self.logger.debug("queue_item: {}".format(queue_item))
                     break
                 self.logger.debug("Waiting for the job to complete...")
                 sleep(sleep_interval)

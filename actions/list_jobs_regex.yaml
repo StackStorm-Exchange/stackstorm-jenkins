@@ -14,3 +14,8 @@ parameters:
     required: false
     secret: true
     description: "Override pack configuration by providing an object with url, username and password keys and appropriate values"
+  folder_depth:
+    type: "integer"
+    required: false
+    default: 0
+    description: "Folder level depth to search"
